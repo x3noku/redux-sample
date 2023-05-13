@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "ExpoTemplate",
+    "slug": "ExpoTemplate",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/app/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/app/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/app/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./src/assets/app/favicon.png"
+    }
+  }
+}
