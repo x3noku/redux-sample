@@ -6,7 +6,7 @@ import PostScreen from '@screens/posts/post/PostScreen';
 
 export type TPostsStackParams = {
     [Screens.Posts.MAIN]: undefined;
-    [Screens.Posts.POST]: { id: string };
+    [Screens.Posts.POST]: { id: number };
 };
 
 const Stack = createNativeStackNavigator<TPostsStackParams>();

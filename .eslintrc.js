@@ -12,16 +12,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/eslint-recommended',
     ],
-    plugins: [
-        'react',
-        'import',
-        'prettier',
-        'react-hooks',
-        'react-native',
-        'unused-imports',
-        'module-resolver',
-        '@typescript-eslint',
-    ],
+    plugins: ['react', 'import', 'prettier', 'react-hooks', 'react-native', 'unused-imports', 'module-resolver'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
