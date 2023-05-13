@@ -25,8 +25,8 @@
       "@navigation/*": ["./src/navigation/*"],
       "@screens/*": ["./src/screens/*"],
       "@styles/*": ["./src/styles/*"],
-      "@utils/*": ["./src/utils/*"],
-    },
+      "@utils/*": ["./src/utils/*"]
+    }
   },
   "include": [".eslintrc.js", "**/*"],
   "exclude": [

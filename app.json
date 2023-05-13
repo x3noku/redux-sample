@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoTemplate",
-    "slug": "ExpoTemplate",
+    "name": "ReduxSample",
+    "slug": "ReduxSample",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/app/icon.png",

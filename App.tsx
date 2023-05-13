@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { Colors } from '@styles/colors';
+import CounterScreen from '@screens/counter/CounterScreen';
+import AppNavigator from '@navigation/AppNavigator';
 
 SplashScreen.preventAutoHideAsync().catch();
 
@@ -36,7 +38,7 @@ export default function App() {
 
     return (
         <View style={styles.wrapper} onLayout={onLayoutRootView}>
-            <Text>Open up App.js to start working on your app!</Text>
+            <AppNavigator />
         </View>
     );
 }
