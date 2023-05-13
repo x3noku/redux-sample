@@ -1,8 +1,11 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+// eslint-disable-next-line import/named
 import { CompositeScreenProps } from '@react-navigation/native';
-import { Screens, Stacks } from '@navigation/constants';
+import { createAsyncChangeAction, createIncrementAction } from '../../store/slices/counter';
+import { useAppDispatch, useAppSelector } from '../../store/store';
+import { Screens } from '@navigation/constants';
 import { TAppStackParams } from '@navigation/AppNavigator';
 import { TCounterStackParams } from '@navigation/stacks/CounterStack';
 
@@ -14,10 +17,25 @@ const CounterScreen: React.FC<
 > = props => {
     const { navigation } = props;
 
+    const { isLoading, count, error } = useAppSelector(store => store.counter);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        if (error) alert(error?.message);
+    }, [error]);
+
     return (
         <View style={styles.wrapper}>
-            <Text>Counter Screen</Text>
-            <TouchableOpacity onPress={() => navigation.navigate(Stacks.POSTS, { screen: Screens.Posts.MAIN })}>
+            {isLoading && <Text>Loading...</Text>}
+            {!isLoading && <Text>{count}</Text>}
+            <TouchableOpacity onPress={() => dispatch(createAsyncChangeAction(-3))}>
+                <Text>Decrement</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => dispatch(createAsyncChangeAction(3))}>
+                <Text>Increment</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => console.log(createIncrementAction())}>
                 <Text>Go to Posts</Text>
             </TouchableOpacity>
         </View>

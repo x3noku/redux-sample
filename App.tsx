@@ -2,8 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
+import { Provider } from 'react-redux';
+import store from './src/store/store';
 import { Colors } from '@styles/colors';
-import CounterScreen from '@screens/counter/CounterScreen';
 import AppNavigator from '@navigation/AppNavigator';
 
 SplashScreen.preventAutoHideAsync().catch();
@@ -38,7 +39,9 @@ export default function App() {
 
     return (
         <View style={styles.wrapper} onLayout={onLayoutRootView}>
-            <AppNavigator />
+            <Provider store={store}>
+                <AppNavigator />
+            </Provider>
         </View>
     );
 }
